@@ -1,12 +1,28 @@
 <html>
   <head>
-    <title>A-Frame Example Component - Basic</title>
+    <meta charset='utf-8'>
+    <title>A-Frame Hyper Link Component - Basic</title>
     <script src="../build.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-assets></a-assets>
-      <a-entity geometry="primitive: box" material="color: #C03546"></a-entity>
+      <!-- <a-assets></a-assets> -->
+      <!-- <a-camera look-controls>
+        <a-cursor color="#4CC3D9"></a-cursor>
+      </a-camera>
+
+      <a-entity geometry="primitive: box" material="color: #C03546"
+                href="http://aframe.io/"></a-entity>-->
+      <a-entity camera>
+        <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500"
+                  position="0 0 -5"
+                  geometry="primitive: ring"
+                  material="color: white; shader: flat">
+        </a-entity>
+      </a-entity>
+
+      <a-entity id="cube" href="http://aframe.io/" geometry="primitive: box" material="color: blue"></a-entity>
+      <!-- <a-sky color="#ECECEC"></a-sky> -->
     </a-scene>
   </body>
 </html>

@@ -1,20 +1,19 @@
 {
-  "name": "aframe-example-component",
+  "name": "aframe-href-component",
   "version": "0.1.0",
-  "description": "Example component for A-Frame.",
+  "description": "Hyper Link component for A-Frame.",
   "main": "index.js",
   "scripts": {
     "build": "browserify examples/main.js -o examples/build.js",
     "dev": "budo examples/main.js:build.js --dir examples --port 8000 --live --open",
-    "dist": "webpack index.js dist/aframe-example-component.js && webpack -p index.js dist/aframe-example-component.min.js",
+    "dist": "webpack index.js dist/aframe-href-component.js && webpack -p index.js dist/aframe-href-component.min.js",
     "postpublish": "npm run dist",
     "preghpages": "npm run build && rm -rf gh-pages && cp -r examples gh-pages",
-    "ghpages": "npm run preghpages && ghpages -p gh-pages",
-    "unboil": "node scripts/unboil.js"
+    "ghpages": "npm run preghpages && ghpages -p gh-pages"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ngokevin/aframe-component-boilerplate.git"
+    "url": "git+https://github.com/gasolin/aframe-href-component.git"
   },
   "keywords": [
     "aframe",
@@ -24,12 +23,12 @@
     "mozvr",
     "webvr"
   ],
-  "author": "Kevin Ngo <me@ngokevin.com>",
+  "author": "Fred Lin <gasolin+npm@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ngokevin/aframe-component-boilerplate/issues"
+    "url": "https://github.com/gasolin/aframe-href-component/issues"
   },
-  "homepage": "https://github.com/ngokevin/aframe-component-boilerplate#readme",
+  "homepage": "https://github.com/gasolin/aframe-href-component#readme",
   "devDependencies": {
     "aframe": "^0.2.0",
     "browserify": "^12.0.1",

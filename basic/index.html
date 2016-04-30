@@ -7,35 +7,18 @@
   <body>
     <a-scene>
       <a-entity position="0 1.8 4">
-        <a-camera id="camera">
+        <a-camera>
           <a-cursor color="#4CC3D9"></a-cursor>
-        </a-camera>
+        <a-camera>
       </a-entity>
 
-      <a-box id="orange-cube" position="-3.5 3.5 -2" rotation="30 30 0" width="2" depth="2"
-             height="2" color="#F16745" roughness="0.8" href="http://aframe.io/">
-        <a-event name="cursor-mouseenter" scale="3 1 1" color="#FFC65D"></a-event>
-        <a-event name="cursor-mouseenter" target="#shadow" scale="3 2 2"></a-event>
-        <a-event name="cursor-mouseleave" scale="1 1 1" color="#F16745"></a-event>
-        <a-event name="cursor-mouseleave" target="#shadow" scale="2 2 2"></a-event>
-      </a-box>
+      <a-box id="orange-cube" position="0 3.5 -2" rotation="30 30 0"
+        width="2" depth="2" height="2" color="#F16745"
+        href="https://github.com/gasolin/aframe-href-component"></a-box>
 
-       <a-plane id="shadow" position="-3.5 0 -2" color="orange" opacity="0.5" rotation="-90 0 0"
-                scale="2 2 2"></a-plane>
-
-    <!-- Object 2 -->
-     <a-sphere id="orange-cube" position="3.5 3.5 -2" rotation="30 30 0" radius="2"
-                                color="blue" roughness="0.8" href="https://www.mozilla.org">
-       <a-event name="cursor-mouseenter" scale="3 1 1" color="#FFC65D"></a-event>
-       <a-event name="cursor-mouseenter" target="#shadow2" scale="3 2 2"></a-event>
-       <a-event name="cursor-mouseleave" scale="1 1 1" color="#F16745"></a-event>
-       <a-event name="cursor-mouseleave" target="#shadow2" scale="2 2 2"></a-event>
-     </a-sphere>
-
-     <a-plane id="shadow2" position="3.5 0 -2" color="blue" opacity="0.5" rotation="-90 0 0"
-              scale="2 2 2"></a-plane>
-
-      <a-sky color="#ECECEC"></a-sky>
+      <!-- <a-box id="blue-cube" position="-3.5 3.5 -2" rotation="30 30 0"
+          width="2" depth="2" height="2" color="blue"
+          href="#orange-cube"></a-box> -->
     </a-scene>
   </body>
 </html>

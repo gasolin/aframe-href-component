@@ -22,7 +22,21 @@ AFRAME.registerComponent('href', {
     var url = this.data;
     this.el.addEventListener('click', function() {
       console.log('link to ' + url);
-      window.location.href = url;
+      if (url && url[0] === '#') { // in-page anchor
+        var ele = document.querySelector(url);
+        var cams = document.querySelectorAll('a-camera')
+        if (ele && cams) {
+          var targetPosition = ele.getAttribute('position');
+          console.log('focus camera to position:' +
+            JSON.stringify(targetPosition));
+          cams[0].setAttribute('position', targetPosition);
+          window.location.hash = url;
+        } else {
+          console.log('#id or a-camera is not defined');
+        }
+      } else { // normal hyper link
+        window.location.href = url;
+      }
     });
   }
 });

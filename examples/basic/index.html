@@ -6,10 +6,6 @@
   </head>
   <body>
     <a-scene>
-      <a-assets>
-        <img id="shadow2" src="../../assets/img/radial-shadow-2.png">
-      </a-assets>
-
       <a-entity position="0 1.8 4">
         <a-camera id="camera">
           <a-cursor color="#4CC3D9"></a-cursor>
@@ -24,8 +20,8 @@
         <a-event name="cursor-mouseleave" target="#shadow" scale="2 2 2"></a-event>
       </a-box>
 
-      <a-image id="shadow" position="0 0 -2" src="#shadow2" opacity="0.5" rotation="-90 0 0"
-               scale="2 2 2"></a-image>
+       <a-plane id="shadow" position="0 0 -2" color="orange" opacity="0.5" rotation="-90 0 0"
+                scale="2 2 2"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>

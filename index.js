@@ -15,9 +15,8 @@ AFRAME.registerComponent('href', {
    */
   init: function() {
     var url = this.data;
-    console.log(url);
     this.el.addEventListener('click', function() {
-      console.log(url);
+      console.log('link to ' + url);
       window.location.href = url;
     });
   }

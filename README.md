@@ -1,16 +1,12 @@
 ## aframe-href-component
 
-A Hyper Link component for [A-Frame](https://aframe.io).
+A Hyper Link component for [A-Frame](https://aframe.io). Help you deal with web links like on the normal web.
 
-Add `href="www.sample.com"` attribute to any a-frame tag, turn the object as a normal web link.
+Add `href="www.sample.com"` attribute to any a-frame tag, turn the object as a normal web link. [demo](https://gasolin.github.io/aframe-href-component/basic/link.html)
 
-Add `href="#id"` attribute to any a-frame tag will move `a-camera` focus to the target object. (experimental)
+### Anchor support (experimental)
 
-### Properties
-
-| Property | Description | Default Value |
-| -------- | ----------- | ------------- |
-|          |             |               |
+Besides the normal hyper link. you can add in-page anchor like `href="#id"` to any a-frame tag. When user click on the object, `a-camera` will move its position to the object with the specified id. [demo](https://gasolin.github.io/aframe-href-component/basic/anchor.html)
 
 ### Usage
 
@@ -41,6 +37,8 @@ Add `href` attribute in target tag (In example is `a-box`).
   </a-scene>
 </body>
 ```
+
+[demo](https://gasolin.github.io/aframe-href-component/basic/index.html)
 
 #### NPM Installation
 

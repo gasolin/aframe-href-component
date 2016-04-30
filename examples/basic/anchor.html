@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>A-Frame Hyper Link Component - Anchors</title>
+    <script src="../build.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity position="0 1.8 4">
+        <a-camera id="camera">
+          <a-cursor color="#4CC3D9"></a-cursor>
+        </a-camera>
+      </a-entity>
+
+      <a-box id="orange-cube" position="-3.5 3.5 -2" rotation="30 30 0" width="2" depth="2"
+             height="2" color="#F16745" roughness="0.8" href="#blue-cube">
+        <a-event name="cursor-mouseenter" scale="3 1 1" color="#FFC65D"></a-event>
+        <a-event name="cursor-mouseenter" target="#shadow" scale="3 2 2"></a-event>
+        <a-event name="cursor-mouseleave" scale="1 1 1" color="#F16745"></a-event>
+        <a-event name="cursor-mouseleave" target="#shadow" scale="2 2 2"></a-event>
+      </a-box>
+
+       <a-plane id="shadow" position="-3.5 0 -2" color="orange" opacity="0.5" rotation="-90 0 0"
+                scale="2 2 2"></a-plane>
+
+    <!-- Object 2 -->
+     <a-sphere id="blue-cube" position="3.5 3.5 -2" rotation="30 30 0" radius="2"
+                                color="blue" roughness="0.8" href="#red-cube">
+       <a-event name="cursor-mouseenter" scale="3 1 1" color="#FFC65D"></a-event>
+       <a-event name="cursor-mouseenter" target="#shadow2" scale="3 2 2"></a-event>
+       <a-event name="cursor-mouseleave" scale="1 1 1" color="#F16745"></a-event>
+       <a-event name="cursor-mouseleave" target="#shadow2" scale="2 2 2"></a-event>
+     </a-sphere>
+
+     <a-plane id="shadow2" position="3.5 0 -2" color="blue" opacity="0.5" rotation="-90 0 0"
+              scale="2 2 2"></a-plane>
+
+    <!-- Object 3 -->
+     <a-sphere id="red-cube" position="0 -3.5 -2" rotation="30 30 0" radius="2"
+                                color="red" roughness="0.8" href="#orange-cube">
+       <a-event name="cursor-mouseenter" scale="3 1 1" color="#FFC65D"></a-event>
+       <a-event name="cursor-mouseenter" target="#shadow3" scale="3 2 2"></a-event>
+       <a-event name="cursor-mouseleave" scale="1 1 1" color="#F16745"></a-event>
+       <a-event name="cursor-mouseleave" target="#shadow3" scale="2 2 2"></a-event>
+     </a-sphere>
+
+     <a-plane id="shadow3" position="0 -10.5 -2" color="red" opacity="0.5" rotation="-90 0 0"
+              scale="2 2 2"></a-plane>
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>

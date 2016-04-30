@@ -2,7 +2,9 @@
 
 A Hyper Link component for [A-Frame](https://aframe.io).
 
-Add `href="url"` attribute to any a-frame tag, turn the object as a normal web link.
+Add `href="www.sample.com"` attribute to any a-frame tag, turn the object as a normal web link.
+
+Add `href="#id"` attribute to any a-frame tag will move `a-camera` focus to the target object. (experimental)
 
 ### Properties
 
@@ -35,7 +37,7 @@ Add `href` attribute in target tag (In example is `a-box`).
 
     <a-box id="orange-cube" position="0 3.5 -2" rotation="30 30 0"
       width="2" depth="2" height="2" color="#F16745"
-      href="http://aframe.io/"></a-box>
+      href="https://github.com/gasolin/aframe-href-component"></a-box>
   </a-scene>
 </body>
 ```

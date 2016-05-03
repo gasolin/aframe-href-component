@@ -1,12 +1,15 @@
 ## aframe-href-component
 
-A Hyper Link component for [A-Frame](https://aframe.io). Help you deal with web links like on the normal web.
+A Hyper Link component for [A-Frame](https://aframe.io). With `aframe-href-component`, each object could be used as a normal html linkable element.
 
-Add `href="www.sample.com"` attribute to any a-frame tag, turn the object as a normal web link. [demo](https://gasolin.github.io/aframe-href-component/basic/link.html)
+### URL Link support
+
+Add `href` attribute to any a-frame tag, such as `href="www.sample.com"`. To turn the object as a normal web link. [demo](https://gasolin.github.io/aframe-href-component/basic/link.html)
 
 ### Anchor support (experimental)
 
-Besides the normal hyper link. you can add in-page anchor like `href="#id"` to any a-frame tag. When user click on the object, `a-camera` will move its position to the object with the specified id. [demo](https://gasolin.github.io/aframe-href-component/basic/anchor.html)
+Besides the normal hyper link. you can add in-page anchor like `href="#id"` to any a-frame tag.
+When user click on the object, `a-camera` will move its position to the object with the specified id. [demo](https://gasolin.github.io/aframe-href-component/basic/anchor.html)
 
 ### Usage
 
@@ -14,7 +17,9 @@ Besides the normal hyper link. you can add in-page anchor like `href="#id"` to a
 
 Install and use by directly including the [browser files](dist):
 
-Add `href` attribute in target tag (In example is `a-box`).
+Make sure you have placed an `a-cursor` element to trigger the click event.
+Then add `href` attribute in target tag (In example is `a-box`). [demo](https://gasolin.github.io/aframe-href-component/basic/index.html)
+
 
 ```html
 <head>
@@ -37,8 +42,6 @@ Add `href` attribute in target tag (In example is `a-box`).
   </a-scene>
 </body>
 ```
-
-[demo](https://gasolin.github.io/aframe-href-component/basic/index.html)
 
 #### NPM Installation
 

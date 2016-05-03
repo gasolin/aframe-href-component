@@ -1,5 +1,7 @@
 ## aframe-href-component
 
+[![npm](https://img.shields.io/npm/v/webby-plugin.svg)](https://www.npmjs.com/package/webby-plugin)
+
 A Hyper Link component for [A-Frame](https://aframe.io). With `aframe-href-component`, each object could be used as a normal html linkable element.
 
 ### URL Link support

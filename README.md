@@ -1,6 +1,6 @@
 ## aframe-href-component
 
-[![npm](https://img.shields.io/npm/v/aframe-href-component.svg)](https://www.npmjs.com/package/aframe-href-component)
+ [![Dependency Status](https://david-dm.org/gasolin/aframe-href-component.svg)](https://david-dm.org/gasolin/aframe-href-component) [![npm](https://img.shields.io/npm/v/aframe-href-component.svg)](https://www.npmjs.com/package/aframe-href-component)
 
 A Hyper Link component for [A-Frame](https://aframe.io). With `aframe-href-component`, each object could be used as a normal html linkable element.
 

@@ -12,8 +12,9 @@ AFRAME.registerComponent('href', {
 
   boundClickHandler: undefined,
 
-  clickHandler: function href_clickHandler(url) {
+  clickHandler: function href_clickHandler() {
     var url = this.data;
+    var target = this.el.getAttribute('target');
     console.log('link to ' + url);
     if (url && url[0] === '#') { // in-page anchor
       var ele = document.querySelector(url);
@@ -28,7 +29,20 @@ AFRAME.registerComponent('href', {
         console.log('#id or a-camera is not defined');
       }
     } else { // normal hyper link
-      window.location.href = url;
+      if (target) {
+        console.log('target to ' + target);
+        switch(target) {
+          case '_blank':
+            window.open(url);
+            break;
+          case 'window':
+          default:
+            window.location.href = url;
+            break;
+        }
+      } else {
+        window.location.href = url;
+      }
     }
   },
 
@@ -36,7 +50,6 @@ AFRAME.registerComponent('href', {
    * Called once when component is attached. Generally for initial setup.
    */
   init: function() {
-    // var url = this.data;
     this.boundClickHandler = this.clickHandler.bind(this);
     this.el.addEventListener('click', this.boundClickHandler);
   },

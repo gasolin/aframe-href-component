@@ -8,6 +8,8 @@ A Hyper Link component for [A-Frame](https://aframe.io). With `aframe-href-compo
 
 Add `href` attribute to any a-frame tag, such as `href="www.sample.com"`. To turn the object as a normal web link. [demo](https://gasolin.github.io/aframe-href-component/basic/link.html)
 
+As normal web page, you could add extra `target="_blank"` attribute in this a-frame tag to open web link in a new window.
+
 ### Anchor support (experimental)
 
 Besides the normal hyper link. you can add in-page anchor like `href="#id"` to any a-frame tag.

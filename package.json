@@ -1,6 +1,6 @@
 {
   "name": "aframe-href-component",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Hyper Link component for A-Frame.",
   "main": "index.js",
   "scripts": {
@@ -34,8 +34,7 @@
     "browserify": "^13.0.0",
     "browserify-css": "^0.9.1",
     "budo": "^8.2.2",
-    "ghpages": "0.0.8",
-    "inquirer": "^1.0.2",
+    "ghpages": "^0.0.8",
     "shx": "^0.1.1",
     "webpack": "^1.13.0"
   }

@@ -4,6 +4,8 @@
   "description": "Hyper Link component for A-Frame.",
   "main": "index.js",
   "scripts": {
+    "lint": "npm run eslint",
+    "eslint": "eslint index.js examples/main.js",
     "build": "browserify examples/main.js -o examples/build.js",
     "dev": "budo examples/main.js:build.js --dir examples --port 8000 --live --open",
     "dist": "webpack index.js dist/aframe-href-component.js && webpack -p index.js dist/aframe-href-component.min.js",
@@ -34,6 +36,8 @@
     "browserify": "^13.0.0",
     "browserify-css": "^0.9.1",
     "budo": "^8.2.2",
+    "eslint": "^2.11.1",
+    "eslint-config-defaults": "^9.0.0",
     "ghpages": "^0.0.8",
     "shx": "^0.1.1",
     "webpack": "^1.13.0"

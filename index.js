@@ -1,5 +1,7 @@
+/* globals AFRAME */
 if (typeof AFRAME === 'undefined') {
-  throw new Error('Component attempted to register before AFRAME was available.');
+  throw new Error('Component attempted to register before AFRAME' +
+    ' was available.');
 }
 
 /**
@@ -12,13 +14,13 @@ AFRAME.registerComponent('href', {
 
   boundClickHandler: undefined,
 
-  clickHandler: function href_clickHandler() {
+  clickHandler: function hrefClickHandler() {
     var url = this.data;
     var target = this.el.getAttribute('target');
     console.log('link to ' + url);
     if (url && url[0] === '#') { // in-page anchor
       var ele = document.querySelector(url);
-      var cams = document.querySelectorAll('a-camera')
+      var cams = document.querySelectorAll('a-camera');
       if (ele && cams) {
         var targetPosition = ele.getAttribute('position');
         console.log('focus camera to position:' +
@@ -40,32 +42,35 @@ AFRAME.registerComponent('href', {
           console.log('target to ' + target + ' & animate ' + animation);
         }
         switch(target) {
-          case '_blank':
-            if (animation) {
-              exitAnimation = document.getElementById(animation);
-              exitAnimation.addEventListener('animationend', function animationendHandler() {
-                exitAnimation.removeEventListener('animationend', animationendHandler);
+        case '_blank':
+          if (animation) {
+            exitAnimation = document.getElementById(animation);
+            exitAnimation.addEventListener('animationend',
+              function animationendHandler() {
+                exitAnimation.removeEventListener('animationend',
+                  animationendHandler);
                 window.open(url);
               });
-              this.el.emit('href');
-            } else {
-              window.open(url);
-            }
-            break;
-          case 'window':
-          default:
-            if (animation) {
-              exitAnimation = document.getElementById(animation);
-              exitAnimation.addEventListener('animationend', function animationendHandler() {
-                exitAnimation.removeEventListener('animationend', animationendHandler);
-                console.log()
+            this.el.emit('href');
+          } else {
+            window.open(url);
+          }
+          break;
+        case 'window':
+        default:
+          if (animation) {
+            exitAnimation = document.getElementById(animation);
+            exitAnimation.addEventListener('animationend',
+              function animationendHandler() {
+                exitAnimation.removeEventListener('animationend',
+                  animationendHandler);
                 window.location.href = url;
               });
-              this.el.emit('href');
-            } else {
-              window.location.href = url;
-            }
-            break;
+            this.el.emit('href');
+          } else {
+            window.location.href = url;
+          }
+          break;
         }
       } else {
         window.location.href = url;
@@ -85,7 +90,7 @@ AFRAME.registerComponent('href', {
    * Called when a component is removed (e.g., via removeAttribute).
    * Generally undoes all modifications to the entity.
    */
-  remove: function () {
+  remove: function() {
     this.el.removeEventListener('click', this.boundClickHandler);
   }
 });

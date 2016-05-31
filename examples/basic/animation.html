@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>A-Frame Hyper Link Component - Animation</title>
+    <script src="../build.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity position="0 1.8 4">
+        <a-camera id="camera" look-controls wasd-controls>
+          <!-- <a-cursor color="#4CC3D9"></a-cursor> -->
+          <a-entity position="0 0 -3"
+            geometry="primitive: ring; radiusOuter: 0.30;
+                      radiusInner: 0.20;"
+            material="color: cyan; shader: flat"
+            cursor="maxDistance: 30; fuse: true">
+          <a-animation begin="click" easing="ease-in" attribute="scale"
+            fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+          <a-animation begin="fusing" easing="ease-in" attribute="scale"
+            fill="forwards" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+          </a-entity>
+        </a-camera>
+      </a-entity>
+
+      <!-- Object 1 open url directly -->
+      <a-box id="orange-cube" position="-3.5 3.5 -2" rotation="30 30 0" width="2" depth="2"
+        height="2" color="#F16745" roughness="0.8" href="https://github.com/gasolin/aframe-href-component"
+        target="#boxout">
+        <a-animation id="boxout" attribute="rotation" from="0 0 0" to="0 -180 0" begin="href" dur="800" easing="ease-in-back"></a-animation>
+      </a-box>
+      <a-plane id="shadow" position="-3.5 0 -2" color="orange" opacity="0.5" rotation="-90 0 0"
+        scale="2 2 2"></a-plane>
+
+      <!-- Object 2 open url in new window -->
+      <a-sphere id="blue-ball" position="3.5 3.5 -2" rotation="30 30 0" radius="2"
+        color="blue" roughness="0.8" href="http://aframe.io/" target="_blank#ballout">
+        <a-animation id="ballout" attribute="scale" from="1 1 1" to="1.2 1.2 1.2" begin="href" dur="800" easing="ease-in"></a-animation>
+      </a-sphere>
+      <a-plane id="shadow2" position="3.5 0 -2" color="blue" opacity="0.5" rotation="-90 0 0"
+        scale="2 2 2"></a-plane>
+
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>

@@ -10,6 +10,10 @@ Add `href` attribute to any a-frame tag, such as `href="www.sample.com"`. To tur
 
 As normal web page, you could add extra `target="_blank"` attribute in this a-frame tag to open web link in a new window.
 
+### Animation support (experimental)
+
+When link is clicked, the href-component will emit a `href` event within this object. You can append the animation id in `target` attribute, such as `target="#out-animation"` (a shortcut of `target="window#out-animation"`) or `target="_blank#out-animation"` to trigger the animation directly. If your animation is not defined within this object, you should emit the event manually.
+
 ### Anchor support (experimental)
 
 Besides the normal hyper link. you can add in-page anchor like `href="#id"` to any a-frame tag.

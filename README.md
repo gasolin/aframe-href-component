@@ -13,6 +13,7 @@ As normal web page, you could add extra `target="_blank"` attribute in this a-fr
 ### Animation support (experimental)
 
 When link is clicked, the href-component will emit a `href` event within this object. You can append the animation id in `target` attribute, such as `target="#out-animation"` (a shortcut of `target="window#out-animation"`) or `target="_blank#out-animation"` to trigger the animation directly. If your animation is not defined within this object, you should emit the event manually.
+[demo](https://gasolin.github.io/aframe-href-component/basic/animation.html)
 
 ### Anchor support (experimental)
 

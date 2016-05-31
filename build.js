@@ -35,14 +35,42 @@ AFRAME.registerComponent('href', {
       }
     } else { // normal hyper link
       if (target) {
+        var animation = '';
+        var exitAnimation = null;
+        var animationendHandler = null;
         console.log('target to ' + target);
+        if (target.indexOf('#') >= 0) {
+          var li = target.split('#');
+          target = li[0];
+          animation = li[1];
+          console.log('target to ' + target + ' & animate ' + animation);
+        }
         switch(target) {
           case '_blank':
-            window.open(url);
+            if (animation) {
+              exitAnimation = document.getElementById(animation);
+              exitAnimation.addEventListener('animationend', function animationendHandler() {
+                exitAnimation.removeEventListener('animationend', animationendHandler);
+                window.open(url);
+              });
+              this.el.emit('href');
+            } else {
+              window.open(url);
+            }
             break;
           case 'window':
           default:
-            window.location.href = url;
+            if (animation) {
+              exitAnimation = document.getElementById(animation);
+              exitAnimation.addEventListener('animationend', function animationendHandler() {
+                exitAnimation.removeEventListener('animationend', animationendHandler);
+                console.log()
+                window.location.href = url;
+              });
+              this.el.emit('href');
+            } else {
+              window.location.href = url;
+            }
             break;
         }
       } else {

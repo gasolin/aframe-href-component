@@ -32,7 +32,6 @@ AFRAME.registerComponent('href', {
       if (target) {
         var animation = '';
         var exitAnimation = null;
-        var animationendHandler = null;
         console.log('target to ' + target);
         if (target.indexOf('#') >= 0) {
           var li = target.split('#');
